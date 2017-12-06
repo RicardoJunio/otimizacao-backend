@@ -1,13 +1,10 @@
-import org.gnu.glpk.GLPK;
+import jdk.internal.instrumentation.TypeMapping;
+import org.gnu.glpk.*;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 import java.io.File;
-
-import org.gnu.glpk.GLPK;
-import org.gnu.glpk.GLPKConstants;
-import org.gnu.glpk.SWIGTYPE_p_double;
-import org.gnu.glpk.SWIGTYPE_p_int;
-import org.gnu.glpk.glp_iocp;
-import org.gnu.glpk.glp_prob;
 
 public class glpk2 {
 
@@ -153,5 +150,25 @@ public class glpk2 {
         System.out.print(GLPK.glp_version());
         solution();
     }
-}
+
+
+
+    public class GlpkApi {
+    }
+
+        @GET
+        public String getResult(){
+            return "Api Funciona";
+        }
+
+        @POST
+        public String result (){
+            solution();
+            return "to aqui mano";
+        }
+
+    }
+
+
+
 
